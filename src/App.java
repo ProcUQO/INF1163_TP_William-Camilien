@@ -3,8 +3,10 @@ import view.*;
 import controller.*;
 /*
 Un peu notre main!! Il va initialiser notre modèle, ses vues et contrôleurs.
+On peut modifier la taille de la fenêtre, les boutons, etc..
  */
 import javax.swing.*;
+import java.awt.*;
 
 public class App {
 
@@ -29,14 +31,30 @@ public class App {
 
         // On crée des vues
         MainView main = new MainView(model, p1);
+        frame.add(main);
+
+        // Le menu et ses boutons
+        JPanel topPanel = new JPanel();
+        JButton saveBtn = new JButton("Sauvegarder");
+        JButton loadBtn = new JButton("Charger");
+        topPanel.add(saveBtn);
+        topPanel.add(loadBtn);
+        frame.add(topPanel, BorderLayout.NORTH);
+        MenuController menuCtrl = new MenuController(model, p1);
+
+        // Comme en prog 2, on veut des listener pour savoir quand les boutons font de quoi :)
+        saveBtn.addActionListener(e -> menuCtrl.saveAction());
+        loadBtn.addActionListener(e -> menuCtrl.loadAction());
+
         ThumbnailView thumb = new ThumbnailView(model, p2);
         SecondaryView sec = new SecondaryView(model, p3);
+
+        // Le contrôleur qui gère la souris pour le zoom
+        frame.addMouseWheelListener(new MouseController(model, p1));
 
         // On les ajoute à la fenêtre (je commence avec une seule vue, William tu peux Williamer là-dessus si tu veux)
         frame.add(main);
         frame.setVisible(true);
 
-        // Le contrôleur qui gère la souris pour le zoom
-        frame.addMouseWheelListener(new MouseController(model, p1));
     }
 }

@@ -28,6 +28,7 @@ public class Perspective {
     public PerspectiveMemento createMemento() {
         return new PerspectiveMemento(scale, translationX, translationY);
     }
+
     // On restaure la perspective à partir d'un memento (m étant le memento qu'on reprend)
     public void restoreFromMemento(PerspectiveMemento m) {
         this.scale = m.getScale();
