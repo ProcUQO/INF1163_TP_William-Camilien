@@ -4,6 +4,7 @@ ESSENTIEL, représente les commandes par menu (et non par la souris)
  */
 import command.LoadPerspectiveCommand;
 import command.SavePerspectiveCommand;
+import command.ZoomCommand;
 import model.ImageModel;
 import model.Perspective;
 
@@ -42,6 +43,17 @@ public class MenuController extends Controller {
             new LoadPerspectiveCommand(perspective, file.getAbsolutePath()).execute();
         }
     }
+
+    public void zoomIn() {
+        // direction -1 dans ton code = zoom in
+        new ZoomCommand(perspective, -1).execute();
+    }
+
+    public void zoomOut() {
+        // direction 1 dans ton code = zoom out
+        new ZoomCommand(perspective, 1).execute();
+    }
+
 }
 
     /* Zoom avant.

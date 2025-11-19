@@ -35,14 +35,24 @@ public class App {
 
         // Le menu et ses boutons
         JPanel topPanel = new JPanel();
+
+        JButton zoomInBtn = new JButton("+");
+        JButton zoomOutBtn = new JButton("-");
         JButton saveBtn = new JButton("Sauvegarder");
         JButton loadBtn = new JButton("Charger");
+
+        topPanel.add(zoomInBtn);
+        topPanel.add(zoomOutBtn);
         topPanel.add(saveBtn);
         topPanel.add(loadBtn);
+
         frame.add(topPanel, BorderLayout.NORTH);
         MenuController menuCtrl = new MenuController(model, p1);
 
         // Comme en prog 2, on veut des listener pour savoir quand les boutons font de quoi :)
+        zoomInBtn.addActionListener(e -> menuCtrl.zoomIn());
+        zoomOutBtn.addActionListener(e -> menuCtrl.zoomOut());
+
         saveBtn.addActionListener(e -> menuCtrl.saveAction());
         loadBtn.addActionListener(e -> menuCtrl.loadAction());
 
