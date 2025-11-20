@@ -12,7 +12,7 @@ public class App {
 
     public static void main(String[] args) {
 
-        // On initialise le modèele avec une image
+        // On initialise le modèele avec une image. Pas grave si elle ne charge pas, on peut en charger manuellement de toute façon.
         // Conseil de Cami : faire ctrl + clic gauche sur ImageModel pour se rediriger aux sections
         ImageModel model = new ImageModel("image.png");
 
@@ -48,6 +48,10 @@ public class App {
 
         frame.add(topPanel, BorderLayout.NORTH);
         MenuController menuCtrl = new MenuController(model, p1);
+
+        JButton loadImageBtn = new JButton("Charger image");
+        topPanel.add(loadImageBtn);
+        loadImageBtn.addActionListener(e -> menuCtrl.loadImage());
 
         // Comme en prog 2, on veut des listener pour savoir quand les boutons font de quoi :)
         zoomInBtn.addActionListener(e -> menuCtrl.zoomIn());

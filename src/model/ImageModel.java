@@ -56,4 +56,16 @@ public class ImageModel {
             p.notifyObservers();
         }
     }
+
+    // On l'appelle depuis LoadImageCommand, pour charger une image
+    public void loadImage(String path) {
+        this.imagePath = path;
+        try {
+            image = ImageIO.read(new File(path));
+            notifyObservers();
+        } catch (IOException e) {
+            System.err.println("Erreur : impossible de charger l'image " + path);
+        }
+    }
+
 }
