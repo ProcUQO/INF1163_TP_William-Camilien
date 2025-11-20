@@ -7,6 +7,8 @@ On peut modifier la taille de la fenêtre, les boutons, etc..
  */
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseMotionAdapter;
+import java.awt.event.MouseAdapter;
 
 public class App {
 
@@ -61,7 +63,6 @@ public class App {
 
         // Le contrôleur qui gère la souris pour le zoom
         frame.addMouseWheelListener(new MouseController(model, p1));
-
         // On les ajoute à la fenêtre (je commence avec une seule vue, William tu peux Williamer là-dessus si tu veux)
         frame.add(main);
         frame.setVisible(true);
