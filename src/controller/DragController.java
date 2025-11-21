@@ -1,8 +1,6 @@
 package controller;
 
 import java.awt.event.*;
-import java.awt.MouseInfo;
-import java.awt.Point;
 
 import command.TranslateCommand;
 import model.ImageModel;
@@ -21,11 +19,9 @@ public class DragController extends Controller implements MouseMotionListener {
     @Override
     public void mouseDragged(MouseEvent e) {
 
-        Point mouseLocation = MouseInfo.getPointerInfo().getLocation();
-        double mousePosX = mouseLocation.getX();
-        double mousePosY = mouseLocation.getY();
 
-        executeCommand(new TranslateCommand(perspective, (int)mousePosX, (int)mousePosY));
+
+        executeCommand(new TranslateCommand(perspective, e.getX(), e.getY()));
     }
 
     public void mouseMoved(MouseEvent e){
