@@ -24,9 +24,6 @@ public class TranslateCommand implements Command {
     @Override
     public void execute() {
         before = perspective.createMemento();
-        System.out.println(dx);
-        System.out.println(dy);
-
         perspective.setTranslation(dx,dy);
     }
 

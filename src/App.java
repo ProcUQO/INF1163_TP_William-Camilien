@@ -32,6 +32,7 @@ public class App {
 
         // On crée des vues
         MainView main = new MainView(model, p1);
+
         frame.add(main);
 
         // Le menu et ses boutons
@@ -66,7 +67,8 @@ public class App {
 
         // Le contrôleur qui gère la souris pour le zoom
         frame.addMouseWheelListener(new MouseController(model, p1));
-        frame.addMouseMotionListener(new DragController(model, p1));
+        main.addMouseListener(new DragController(model, p1));
+        main.addMouseMotionListener(new ImageDragController(model, p1));
 
         // On les ajoute à la fenêtre (je commence avec une seule vue, William tu peux Williamer là-dessus si tu veux)
         frame.add(main);
