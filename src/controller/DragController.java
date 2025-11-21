@@ -6,35 +6,32 @@ import java.awt.Point;
 import model.ImageModel;
 import model.Perspective;
 
+/**********
+ * Cette class nous permet d'obtenir les valeur de la position avec le release du click
+ *
+ ***********/
+
 public class DragController extends Controller implements MouseListener {
 
     private Perspective perspective;
-
-    public static Point previousPoint;
-
+    public static Point previousPoint = new Point(0,0);
+    private Point pastPoint;
+    // Constructeur de la class
     public DragController(ImageModel model, Perspective p){
         super(model);
         this.perspective = p;
     }
 
     @Override
-    public void mousePressed(MouseEvent e) {
-        if(previousPoint == null){
-            previousPoint = new Point(0,0);
-        }
-        perspective.setTranslation((int)previousPoint.getX(),(int)previousPoint.getY());
-    }
+    public void mousePressed(MouseEvent e) {}
 
-    public void mouseClicked(MouseEvent e){
-
-    }
+    //Permet au release du click de la souris d'initier la position de la souris initial
     public void mouseReleased(MouseEvent e) {
-        previousPoint = e.getPoint();
-    }
-    public void mouseEntered(MouseEvent e){
 
+        this.pastPoint = new Point(perspective.getTranslationX(), perspective.getTranslationY());
     }
-    public void mouseExited(MouseEvent e){
 
-    }
+    public void mouseEntered(MouseEvent e){}
+    public void mouseExited(MouseEvent e){}
+    public void mouseClicked(MouseEvent e){}
 }
