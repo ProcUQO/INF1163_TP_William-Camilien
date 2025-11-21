@@ -12,6 +12,7 @@ public class TranslateCommand implements Command {
     private PerspectiveMemento before; // Son état avant la modification pour le undo
     private int dx, dy; // Les déplacements x/y
 
+
     // p pour perspective à modifier, dx pour déplacement x et y pour, bah, déplacement y.
     public TranslateCommand(Perspective p, int dx, int dy) {
         this.perspective = p;
@@ -23,10 +24,10 @@ public class TranslateCommand implements Command {
     @Override
     public void execute() {
         before = perspective.createMemento();
-        perspective.setTranslation(
-                perspective.getTranslationX() + dx,
-                perspective.getTranslationY() + dy
-        );
+        System.out.println(dx);
+        System.out.println(dy);
+
+        perspective.setTranslation(dx,dy);
     }
 
     // On reprend l'ancien état.

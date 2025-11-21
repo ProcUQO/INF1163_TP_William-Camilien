@@ -1,3 +1,4 @@
+
 import model.*;
 import view.*;
 import controller.*;
@@ -65,6 +66,7 @@ public class App {
 
         // Le contrôleur qui gère la souris pour le zoom
         frame.addMouseWheelListener(new MouseController(model, p1));
+        frame.addMouseMotionListener(new DragController(model, p1));
 
         // On les ajoute à la fenêtre (je commence avec une seule vue, William tu peux Williamer là-dessus si tu veux)
         frame.add(main);
