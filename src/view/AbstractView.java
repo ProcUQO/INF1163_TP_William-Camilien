@@ -42,22 +42,15 @@ public abstract class AbstractView extends JPanel implements Observer {
         int tx = perspective.getTranslationX();
         int ty = perspective.getTranslationY();
 
-        // On centre la vue en appliquant le zoom et la translation.
-        // note pour william : tu peux changer l'approche si tu penses que c'est un peu nul hahaha
-        int centerX = getWidth() / 2;
-        int centerY = getHeight() / 2;
+        // 1. Appliquer la translation
+        g2.translate(tx, ty);
 
-        // Déplace l'origine vers le centre
-        g2.translate(centerX, centerY);
-
-        // Applique le zoom
+        // 2. Appliquer le zoom autour du coin supérieur gauche
         g2.scale(scale, scale);
 
-        // Revenir en arrière, mais ajusté par la translation de l'utilisateur
-        g2.translate(-centerX + tx, -centerY + ty);
-
-        // Dessiner l'image
+        // 3. Dessiner l’image
         g2.drawImage(img, 0, 0, this);
     }
+
 
 }

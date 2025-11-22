@@ -67,8 +67,12 @@ public class App {
 
         // Le contrôleur qui gère la souris pour le zoom
         frame.addMouseWheelListener(new MouseController(model, p1));
-        main.addMouseListener(new DragController(model, p1));
-        main.addMouseMotionListener(new ImageDragController(model, p1));
+
+        // Encore le contrôleur de la souris, mais cette fois pour le drag (merci william)
+        ImageDragController drag = new ImageDragController(model, p1);
+        main.addMouseListener(drag);
+        main.addMouseMotionListener(drag);
+
 
         // On les ajoute à la fenêtre (je commence avec une seule vue, William tu peux Williamer là-dessus si tu veux)
         frame.add(main);
