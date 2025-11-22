@@ -5,8 +5,8 @@ Actions de la souris, comme la molette pour zoomer.
 import model.ImageModel;
 import command.ZoomCommand;
 import model.Perspective;
-import java.awt.event.MouseWheelEvent;
-import java.awt.event.MouseWheelListener;
+
+import java.awt.event.*;
 
 public class MouseController extends Controller implements MouseWheelListener {
 
@@ -23,4 +23,6 @@ public class MouseController extends Controller implements MouseWheelListener {
     public void mouseWheelMoved(MouseWheelEvent e) {
         executeCommand(new ZoomCommand(perspective, e.getWheelRotation())); // getWheelRotation retourne un int, c'est plutôt cool!
     }
+
+
 }
