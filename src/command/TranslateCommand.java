@@ -10,6 +10,7 @@ public class TranslateCommand implements Command {
 
     private Perspective perspective; // C'est la perspective qu'on modifie
     private PerspectiveMemento before; // Son état avant la modification pour le undo
+
     private int dx, dy; // Les déplacements x/y
 
 

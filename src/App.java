@@ -55,6 +55,12 @@ public class App {
         topPanel.add(loadImageBtn);
         loadImageBtn.addActionListener(e -> menuCtrl.loadImage());
 
+        // Pour le undo redo, bien sûr
+        JButton undoBtn = new JButton("Undo");
+        JButton redoBtn = new JButton("Redo");
+        topPanel.add(undoBtn);
+        topPanel.add(redoBtn);
+
         // Comme en prog 2, on veut des listener pour savoir quand les boutons font de quoi :)
         zoomInBtn.addActionListener(e -> menuCtrl.zoomIn());
         zoomOutBtn.addActionListener(e -> menuCtrl.zoomOut());
@@ -62,6 +68,8 @@ public class App {
         saveBtn.addActionListener(e -> menuCtrl.saveAction());
         loadBtn.addActionListener(e -> menuCtrl.loadAction());
 
+        undoBtn.addActionListener(e -> menuCtrl.undo());
+        redoBtn.addActionListener(e -> menuCtrl.redo());
         ThumbnailView thumb = new ThumbnailView(model, p2);
         SecondaryView sec = new SecondaryView(model, p3);
 

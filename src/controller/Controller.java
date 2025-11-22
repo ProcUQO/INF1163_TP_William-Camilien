@@ -4,6 +4,7 @@ C'estn otre fameux abstract Controller (MVC et GRASP).
 C'est donc la base pour nos contrôleurs, le blueprint qui va gérer l'exécution
 d'une commande sur le modèle.
  */
+import history.HistoryManager;
 import model.ImageModel;
 import command.Command;
 
@@ -19,6 +20,7 @@ public abstract class Controller {
     // On exécute la commande sur le modèle.
     protected void executeCommand(Command cmd) {
         cmd.execute();
+        HistoryManager.getInstance().push(cmd);
     }
     
 }

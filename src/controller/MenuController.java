@@ -6,6 +6,7 @@ import command.LoadImageCommand;
 import command.LoadPerspectiveCommand;
 import command.SavePerspectiveCommand;
 import command.ZoomCommand;
+import history.HistoryManager;
 import model.ImageModel;
 import model.Perspective;
 
@@ -87,6 +88,14 @@ public class MenuController extends Controller {
             String path = chooser.getSelectedFile().getAbsolutePath();
             new LoadImageCommand(model, path).execute();
         }
+    }
+
+    public void undo() {
+        HistoryManager.getInstance().undo();
+    }
+
+    public void redo() {
+        HistoryManager.getInstance().redo();
     }
 
 

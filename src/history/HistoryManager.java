@@ -1,33 +1,65 @@
 package history;
-/*
-Pour gérer l'historique des commandes exécutées pour faire des undo et redo. C'est un Singleton pour une seule
-gestion globale de l'historique (voir document)
- */
+
 import command.Command;
 import java.util.Stack;
-// pas fini
 
+/**
+ * Gestionnaire global de l'historique (Singleton).
+ * Permet d'annuler et rétablir les commandes exécutées.
+ */
 public class HistoryManager {
 
-    private static HistoryManager instance; // Notre belle instance unique de Singleton
-    private Stack<Command> history = new Stack<>(); //Un pile de commandes exécutées, un peu expérimentale à travailler
-    // Constructeur privé, on veut pas instancier directement
+    private static HistoryManager instance;
+
+    // Pile des commandes exécutées (peut être annulée)
+    private Stack<Command> undoStack = new Stack<>();
+
+    // Pile des commandes annulées (peut être refaites)
+    private Stack<Command> redoStack = new Stack<>();
+
+    private static final int MAX_SIZE = 30; // Limite arbitraire, on pourrait rendre la valeur publique plus tard
+
     private HistoryManager() {}
-    // Retourne l'instance unique du singleton HistoryManager, et donc de HistoryManager.
+
     public static HistoryManager getInstance() {
         if (instance == null) instance = new HistoryManager();
         return instance;
     }
-    // On ajoute une commande (cmd)
+
+    /**
+     * Enregistrer une nouvelle commande dans l'historique.
+     * - Vide le redo (nouvelle branche d’historique)
+     * - Ajoute dans undo
+     */
     public void push(Command cmd) {
-        history.push(cmd);
-    }
-    // On annule la commmande du sommet de la pile et on fait undo.
-    public void undo() {
-        if (!history.isEmpty()) {
-            history.pop().undo();
+        undoStack.push(cmd);
+        redoStack.clear();
+
+        // retrait de l'entrée la plus vieille
+        if(undoStack.size() > MAX_SIZE) {
+            undoStack.remove(0);
         }
     }
 
-    // Il faut ajouter redo
+    /**
+     * Annule la dernière commande.
+     */
+    public void undo() {
+        if (!undoStack.isEmpty()) {
+            Command cmd = undoStack.pop();
+            cmd.undo();
+            redoStack.push(cmd);
+        }
+    }
+
+    /**
+     * Ré-exécute la dernière commande annulée.
+     */
+    public void redo() {
+        if (!redoStack.isEmpty()) {
+            Command cmd = redoStack.pop();
+            cmd.execute(); // réapplique la commande
+            undoStack.push(cmd);
+        }
+    }
 }
