@@ -34,13 +34,12 @@ public class App {
         // On crée des vues
         MainView main = new MainView(model, p1);
         SecondaryView sec = new SecondaryView(model, p1, p3, main);
+        ThumbnailView thumb = new ThumbnailView(model, p2, main);
 
         frame.add(main, BorderLayout.CENTER);
 
         // Le menu et ses boutons
         JPanel topPanel = new JPanel();
-
-        JPanel thumbnailPanel = new JPanel();
 
         JButton zoomInBtn = new JButton("+");
         JButton zoomOutBtn = new JButton("-");
@@ -53,7 +52,6 @@ public class App {
         topPanel.add(loadBtn);
 
         frame.add(topPanel, BorderLayout.NORTH);
-        frame.add(thumbnailPanel, BorderLayout.SOUTH);
         MenuController menuCtrl = new MenuController(model, p1);
 
         JButton loadImageBtn = new JButton("Charger image");
@@ -68,10 +66,16 @@ public class App {
 
         // Vue secondaire
         JPanel rightPanel = new JPanel();
+        JPanel sousPanel = new JPanel();
+        JPanel emptyPanel = new JPanel();
+        emptyPanel.setBackground(Color.DARK_GRAY);
         rightPanel.setLayout(new GridLayout(2, 1));
+        sousPanel.setLayout(new GridLayout(2,1));
 
-        // rightPanel.add(thumb);
         rightPanel.add(sec);
+        rightPanel.add(sousPanel);
+        sousPanel.add(emptyPanel);
+        sousPanel.add(thumb, BorderLayout.SOUTH);
 
         frame.add(rightPanel, BorderLayout.EAST);
 
@@ -85,7 +89,7 @@ public class App {
 
         undoBtn.addActionListener(e -> menuCtrl.undo());
         redoBtn.addActionListener(e -> menuCtrl.redo());
-        ThumbnailView thumb = new ThumbnailView(model, p2);
+
 
 
         // Le contrôleur qui gère la souris pour le zoom
