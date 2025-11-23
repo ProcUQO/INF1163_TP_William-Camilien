@@ -38,6 +38,8 @@ public class App {
         // Le menu et ses boutons
         JPanel topPanel = new JPanel();
 
+        JPanel thumbnailPanel = new JPanel();
+
         JButton zoomInBtn = new JButton("+");
         JButton zoomOutBtn = new JButton("-");
         JButton saveBtn = new JButton("Sauvegarder");
@@ -49,6 +51,7 @@ public class App {
         topPanel.add(loadBtn);
 
         frame.add(topPanel, BorderLayout.NORTH);
+        frame.add(thumbnailPanel, BorderLayout.SOUTH);
         MenuController menuCtrl = new MenuController(model, p1);
 
         JButton loadImageBtn = new JButton("Charger image");
