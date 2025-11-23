@@ -6,8 +6,11 @@ import controller.*;
 Un peu notre main!! Il va initialiser notre modèle, ses vues et contrôleurs.
 On peut modifier la taille de la fenêtre, les boutons, etc..
  */
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 
 public class App {
 
@@ -38,11 +41,17 @@ public class App {
 
         frame.add(main, BorderLayout.CENTER);
 
+        // Chargement d'icones
+        ImageIcon zoomInIcon = loadIcon("icones/zoom-in.png", 20);
+        ImageIcon zoomOutIcon = loadIcon("icones/zoom-out.png", 20);
+        ImageIcon undoIcon = loadIcon("icones/undo.png", 20);
+        ImageIcon redoIcon = loadIcon("icones/redo.png", 20);
+
         // Le menu et ses boutons
         JPanel topPanel = new JPanel();
 
-        JButton zoomInBtn = new JButton("+");
-        JButton zoomOutBtn = new JButton("-");
+        JButton zoomInBtn = new JButton(zoomInIcon);
+        JButton zoomOutBtn = new JButton(zoomOutIcon);
         JButton saveBtn = new JButton("Sauvegarder");
         JButton loadBtn = new JButton("Charger");
 
@@ -59,8 +68,8 @@ public class App {
         loadImageBtn.addActionListener(e -> menuCtrl.loadImage());
 
         // Pour le undo redo, bien sûr
-        JButton undoBtn = new JButton("Undo");
-        JButton redoBtn = new JButton("Redo");
+        JButton undoBtn = new JButton(undoIcon);
+        JButton redoBtn = new JButton(redoIcon);
         topPanel.add(undoBtn);
         topPanel.add(redoBtn);
 
@@ -104,6 +113,18 @@ public class App {
         // On les ajoute à la fenêtre (je commence avec une seule vue, William tu peux Williamer là-dessus si tu veux)
         frame.add(main);
         frame.setVisible(true);
-
     }
+
+    // Méthode pour charger une icône
+    private static ImageIcon loadIcon(String path, int size) {
+        try {
+            Image img = ImageIO.read(new File(path));
+            Image scaled = img.getScaledInstance(size, size, Image.SCALE_SMOOTH);
+            return new ImageIcon(scaled);
+        } catch (IOException e) {
+            System.err.println("Could not load icon: " + path);
+            return null;
+        }
+    }
+
 }
