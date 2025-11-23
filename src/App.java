@@ -21,6 +21,7 @@ public class App {
         Perspective p1 = new Perspective();
         Perspective p2 = new Perspective();
         Perspective p3 = new Perspective();
+
         model.addPerspective(p1);
         model.addPerspective(p2);
         model.addPerspective(p3);
@@ -32,8 +33,9 @@ public class App {
 
         // On crée des vues
         MainView main = new MainView(model, p1);
+        SecondaryView sec = new SecondaryView(model, p1, p3, main);
 
-        frame.add(main);
+        frame.add(main, BorderLayout.CENTER);
 
         // Le menu et ses boutons
         JPanel topPanel = new JPanel();
@@ -61,6 +63,16 @@ public class App {
         topPanel.add(undoBtn);
         topPanel.add(redoBtn);
 
+        // Vue secondaire
+        JPanel rightPanel = new JPanel();
+        rightPanel.setLayout(new GridLayout(2, 1));
+
+        // rightPanel.add(thumb);
+        rightPanel.add(sec);
+
+        frame.add(rightPanel, BorderLayout.EAST);
+
+
         // Comme en prog 2, on veut des listener pour savoir quand les boutons font de quoi :)
         zoomInBtn.addActionListener(e -> menuCtrl.zoomIn());
         zoomOutBtn.addActionListener(e -> menuCtrl.zoomOut());
@@ -71,7 +83,7 @@ public class App {
         undoBtn.addActionListener(e -> menuCtrl.undo());
         redoBtn.addActionListener(e -> menuCtrl.redo());
         ThumbnailView thumb = new ThumbnailView(model, p2);
-        SecondaryView sec = new SecondaryView(model, p3);
+
 
         // Le contrôleur qui gère la souris pour le zoom
         frame.addMouseWheelListener(new MouseController(model, p1));

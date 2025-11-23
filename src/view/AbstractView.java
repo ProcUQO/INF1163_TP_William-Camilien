@@ -45,12 +45,11 @@ public abstract class AbstractView extends JPanel implements Observer {
         // 1. Appliquer la translation
         g2.translate(tx, ty);
 
-        // 2. Appliquer le zoom autour du coin supérieur gauche
+        // 2. Appliquer le zoom autour du coin supérieur gauche (oui, on peut changer ça plus tard)
         g2.scale(scale, scale);
 
-        // 3. Dessiner l’image
+        // 3. Dessiner l’image (voir la doc)
         g2.drawImage(img, 0, 0, this);
     }
-
 
 }

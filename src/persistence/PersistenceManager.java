@@ -14,6 +14,11 @@ public class PersistenceManager {
     On sauvegarde l'état de la perspective (p pour perspective, filename pour le nom, IOException en cas d'erreur)
      */
     public static void save(Perspective p, String filename) throws IOException {
+        // Vu que c'est un peu gossant d'écrire .json quand on veut un .json, cette ligne va rendre le truc automatique si c'est pas déjà fait
+        if (!filename.toLowerCase().endsWith(".json")) {
+            filename += ".json";
+        }
+
         // Version JSON de la perspective qu'on crée et sauvegarde
         String json = "{\n" +
                 "  \"scale\": " + p.getScale() + ",\n" +
