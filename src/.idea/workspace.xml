@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="bf2fc00e-38c7-48a1-ad9e-f9179a96111b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/test/java/unit/command/TranslateCommandTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/java/unit/model/PerspectiveTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/command/Command.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/command/Command.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/command/LoadImageCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/command/LoadImageCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/command/LoadPerspectiveCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/command/LoadPerspectiveCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/command/SavePerspectiveCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/command/SavePerspectiveCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/command/TranslateCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/command/TranslateCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/command/TranslateManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/command/TranslateManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/command/ZoomCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/command/ZoomCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/controller/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/controller/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/controller/DragController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/controller/DragController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/controller/ImageDragController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/controller/ImageDragController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/controller/MenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/controller/MenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/controller/MouseController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/controller/MouseController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/history/HistoryManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/history/HistoryManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/model/ImageModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/model/ImageModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/model/Perspective.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/model/Perspective.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/model/PerspectiveMemento.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/model/PerspectiveMemento.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/persistence/PersistenceManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/persistence/PersistenceManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/strategy/CopyBoth.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/strategy/CopyBoth.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/strategy/CopyNone.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/strategy/CopyNone.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/strategy/CopyScale.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/strategy/CopyScale.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/strategy/CopyStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/strategy/CopyStrategy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/strategy/CopyTranslation.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/strategy/CopyTranslation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/view/AbstractView.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/view/AbstractView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/view/MainView.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/view/MainView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/view/Observer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/view/Observer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/view/SecondaryView.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/view/SecondaryView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/view/ThumbnailView.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/INF1163_TP_William-Camilien/view/ThumbnailView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/main/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/main/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/main/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/main/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/INF1163_TP_William-Camilien.iml" beforeDir="false" afterPath="$PROJECT_DIR$/main/INF1163_TP_William-Camilien.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/command/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/command/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/command/LoadImageCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/command/LoadImageCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/command/LoadPerspectiveCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/command/LoadPerspectiveCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/command/SavePerspectiveCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/command/SavePerspectiveCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/command/TranslateCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/command/TranslateCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/command/TranslateManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/command/TranslateManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/command/ZoomCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/command/ZoomCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/DragController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/controller/DragController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/ImageDragController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/controller/ImageDragController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/controller/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/MouseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/controller/MouseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/history/HistoryManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/history/HistoryManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/icones/redo.png" beforeDir="false" afterPath="$PROJECT_DIR$/main/icones/redo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/icones/undo.png" beforeDir="false" afterPath="$PROJECT_DIR$/main/icones/undo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/icones/zoom-in.png" beforeDir="false" afterPath="$PROJECT_DIR$/main/icones/zoom-in.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/icones/zoom-out.png" beforeDir="false" afterPath="$PROJECT_DIR$/main/icones/zoom-out.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image.png" beforeDir="false" afterPath="$PROJECT_DIR$/main/image.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/ImageModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/model/ImageModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/Perspective.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/model/Perspective.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/PerspectiveMemento.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/model/PerspectiveMemento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/INF1163_TP_William-Camilien/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/INF1163_TP_William-Camilien/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/main/out/production/INF1163_TP_William-Camilien/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/INF1163_TP_William-Camilien/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/main/out/production/INF1163_TP_William-Camilien/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/INF1163_TP_William-Camilien/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/main/out/production/INF1163_TP_William-Camilien/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/INF1163_TP_William-Camilien/App.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/INF1163_TP_William-Camilien/INF1163_TP_William-Camilien.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/INF1163_TP_William-Camilien/command/Command.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/INF1163_TP_William-Camilien/command/LoadImageCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/INF1163_TP_William-Camilien/command/LoadPerspectiveCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/INF1163_TP_William-Camilien/command/SavePerspectiveCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/INF1163_TP_William-Camilien/command/TranslateCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/INF1163_TP_William-Camilien/command/TranslateManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/INF1163_TP_William-Camilien/command/ZoomCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/INF1163_TP_William-Camilien/controller/Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/INF1163_TP_William-Camilien/controller/DragController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/INF1163_TP_William-Camilien/controller/ImageDragController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/INF1163_TP_William-Camilien/controller/MenuController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/INF1163_TP_William-Camilien/controller/MouseController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/INF1163_TP_William-Camilien/history/HistoryManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/INF1163_TP_William-Camilien/icones/redo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/INF1163_TP_William-Camilien/icones/undo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/INF1163_TP_William-Camilien/icones/zoom-in.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/INF1163_TP_William-Camilien/icones/zoom-out.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/INF1163_TP_William-Camilien/image.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/INF1163_TP_William-Camilien/model/ImageModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/INF1163_TP_William-Camilien/model/Perspective.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/INF1163_TP_William-Camilien/model/PerspectiveMemento.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/INF1163_TP_William-Camilien/persistence/PersistenceManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/INF1163_TP_William-Camilien/strategy/CopyBoth.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/INF1163_TP_William-Camilien/strategy/CopyNone.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/INF1163_TP_William-Camilien/strategy/CopyScale.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/INF1163_TP_William-Camilien/strategy/CopyStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/INF1163_TP_William-Camilien/strategy/CopyTranslation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/INF1163_TP_William-Camilien/view/AbstractView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/INF1163_TP_William-Camilien/view/MainView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/INF1163_TP_William-Camilien/view/Observer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/INF1163_TP_William-Camilien/view/SecondaryView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/INF1163_TP_William-Camilien/view/ThumbnailView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/persistence/PersistenceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/persistence/PersistenceManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/strategy/CopyBoth.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/strategy/CopyBoth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/strategy/CopyNone.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/strategy/CopyNone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/strategy/CopyScale.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/strategy/CopyScale.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/strategy/CopyStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/strategy/CopyStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/strategy/CopyTranslation.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/strategy/CopyTranslation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/AbstractView.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/view/AbstractView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/view/MainView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/Observer.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/view/Observer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/SecondaryView.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/view/SecondaryView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/ThumbnailView.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/view/ThumbnailView.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;ProcUQO&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/ProcUQO/INF1163_TP_William-Camilien.git&quot;,
+    &quot;accountId&quot;: &quot;e5ff3369-d993-44c4-b505-330d1d8b7d11&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="36PECwoTOzdEk8dNR9Wp65ZGjbj" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.App.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;JUnit.TranslateCommandTest.execute_shouldUpdateTranslation.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TranslateCommandTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TranslateCommandTest.undo_shouldRestorePreviousTranslation.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Travaux/Uni/INF1163_TP_William-Camilien/src&quot;
+  }
+}</component>
+  <component name="RunManager" selected="JUnit.TranslateCommandTest">
+    <configuration name="TranslateCommandTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="INF1163_TP_William-Camilien" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.java.unit.command.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.java.unit.command" />
+      <option name="MAIN_CLASS_NAME" value="test.java.unit.command.TranslateCommandTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TranslateCommandTest.execute_shouldUpdateTranslation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="INF1163_TP_William-Camilien" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.java.unit.command.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.java.unit.command" />
+      <option name="MAIN_CLASS_NAME" value="test.java.unit.command.TranslateCommandTest" />
+      <option name="METHOD_NAME" value="execute_shouldUpdateTranslation" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TranslateCommandTest.undo_shouldRestorePreviousTranslation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="INF1163_TP_William-Camilien" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.java.unit.command.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.java.unit.command" />
+      <option name="MAIN_CLASS_NAME" value="test.java.unit.command.TranslateCommandTest" />
+      <option name="METHOD_NAME" value="undo_shouldRestorePreviousTranslation" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ZoomCommandTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="INF1163_TP_William-Camilien" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.java.unit.history.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.java.unit.history" />
+      <option name="MAIN_CLASS_NAME" value="test.java.unit.history.ZoomCommandTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.TranslateCommandTest" />
+        <item itemvalue="JUnit.ZoomCommandTest" />
+        <item itemvalue="JUnit.TranslateCommandTest.execute_shouldUpdateTranslation" />
+        <item itemvalue="JUnit.TranslateCommandTest.undo_shouldRestorePreviousTranslation" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bf2fc00e-38c7-48a1-ad9e-f9179a96111b" name="Changes" comment="" />
+      <created>1764899682784</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1764899682784</updated>
+    </task>
+    <servers />
+  </component>
+</project>
