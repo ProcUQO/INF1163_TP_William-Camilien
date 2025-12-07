@@ -62,4 +62,18 @@ public class HistoryManager {
             undoStack.push(cmd);
         }
     }
+
+    // On va seulement utiliser clear et size pour le debuggage, bref nos tests
+    public void clear() {
+        undoStack.clear();
+        redoStack.clear();
+    }
+
+    public int size() {
+        return undoStack.size();
+    }
+
+    public int redoSize() {
+        return redoStack.size();
+    }
 }
