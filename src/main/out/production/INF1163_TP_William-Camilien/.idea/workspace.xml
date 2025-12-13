@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf2fc00e-38c7-48a1-ad9e-f9179a96111b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/test/java/unit/command/FakeCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/java/unit/history/HistoryManagerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/java/integration/ControllerIntegrationTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,7 +65,7 @@
       <module name="INF1163_TP_William-Camilien" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.java.unit.command.*" />
+          <option name="PATTERN" value="test.java.unit.persistance.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -81,7 +80,7 @@
       <module name="INF1163_TP_William-Camilien" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.java.unit.command.*" />
+          <option name="PATTERN" value="test.java.unit.persistance.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -97,7 +96,7 @@
       <module name="INF1163_TP_William-Camilien" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.java.unit.command.*" />
+          <option name="PATTERN" value="test.java.unit.persistance.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>

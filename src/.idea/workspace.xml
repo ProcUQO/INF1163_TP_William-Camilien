@@ -5,14 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf2fc00e-38c7-48a1-ad9e-f9179a96111b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/test/java/unit/command/FakeCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/java/unit/history/HistoryManagerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/java/unit/persistance/PersistenceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/java/unit/strategy/CopyStrategyTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/java/e2e/RestartLoadTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/java/e2e/UndoAffectsOnlyActiveViewTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/java/integration/ControllerIntegrationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/java/integration/CopyIntegrationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/java/integration/PersistenceIntegrationTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/history/HistoryManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/history/HistoryManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/out/production/INF1163_TP_William-Camilien/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/main/out/production/INF1163_TP_William-Camilien/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/out/production/INF1163_TP_William-Camilien/main/history/HistoryManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/main/out/production/INF1163_TP_William-Camilien/main/history/HistoryManager.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
