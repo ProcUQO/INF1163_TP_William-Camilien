@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>App.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">INF1163_TP_Cami_William</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">App.java</span></div><h1>App.java</h1><pre class="source lang-java linenums">import controller.ImageDragController;
+import controller.MenuController;
+import controller.MouseController;
+import model.ImageModel;
+import model.Perspective;
+import view.MainView;
+import view.SecondaryView;
+import view.ThumbnailView;
+import model.*;
+import view.*;
+import controller.*;
+/*
+Un peu notre main!! Il va initialiser notre modèle, ses vues et contrôleurs.
+On peut modifier la taille de la fenêtre, les boutons, etc..
+ */
+import javax.imageio.ImageIO;
+import javax.swing.*;
+import java.awt.*;
+import java.io.File;
+import java.io.IOException;
+
+<span class="nc" id="L22">public class App {</span>
+
+    public static void main(String[] args) {
+
+        // On initialise le modèele avec une image. Pas grave si elle ne charge pas, on peut en charger manuellement de toute façon.
+        // Conseil de Cami : faire ctrl + clic gauche sur ImageModel pour se rediriger aux sections
+<span class="nc" id="L28">        ImageModel model = new ImageModel(&quot;src/main/java/image.png&quot;);</span>
+
+        // On crée les trois perspectives
+<span class="nc" id="L31">        Perspective p1 = new Perspective();</span>
+<span class="nc" id="L32">        Perspective p2 = new Perspective();</span>
+<span class="nc" id="L33">        Perspective p3 = new Perspective();</span>
+
+<span class="nc" id="L35">        model.addPerspective(p1);</span>
+<span class="nc" id="L36">        model.addPerspective(p2);</span>
+<span class="nc" id="L37">        model.addPerspective(p3);</span>
+
+        // On crée la fenêtre principale (pour William : tu peux gosser avec si tu veux le perfectionner!! J'ai pris des valeurs pas rapport)
+<span class="nc" id="L40">        JFrame frame = new JFrame(&quot;MVC Image Viewer&quot;);</span>
+<span class="nc" id="L41">        frame.setSize(900, 600);</span>
+<span class="nc" id="L42">        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span>
+
+        // On crée des vues
+<span class="nc" id="L45">        MainView main = new MainView(model, p1);</span>
+<span class="nc" id="L46">        SecondaryView sec = new SecondaryView(model, p1, p3, main);</span>
+<span class="nc" id="L47">        ThumbnailView thumb = new ThumbnailView(model, p2, main);</span>
+
+<span class="nc" id="L49">        frame.add(main, BorderLayout.CENTER);</span>
+
+        // Chargement d'icones
+<span class="nc" id="L52">        ImageIcon zoomInIcon = loadIcon(&quot;src/main/java/icones/zoom-in.png&quot;, 20);</span>
+<span class="nc" id="L53">        ImageIcon zoomOutIcon = loadIcon(&quot;src/main/java/icones/zoom-out.png&quot;, 20);</span>
+<span class="nc" id="L54">        ImageIcon undoIcon = loadIcon(&quot;src/main/java/icones/undo.png&quot;, 20);</span>
+<span class="nc" id="L55">        ImageIcon redoIcon = loadIcon(&quot;src/main/java/icones/redo.png&quot;, 20);</span>
+
+        // Le menu et ses boutons
+<span class="nc" id="L58">        JPanel topPanel = new JPanel();</span>
+
+<span class="nc" id="L60">        JButton zoomInBtn = new JButton(zoomInIcon);</span>
+<span class="nc" id="L61">        JButton zoomOutBtn = new JButton(zoomOutIcon);</span>
+<span class="nc" id="L62">        JButton saveBtn = new JButton(&quot;Sauvegarder&quot;);</span>
+<span class="nc" id="L63">        JButton loadBtn = new JButton(&quot;Charger&quot;);</span>
+
+<span class="nc" id="L65">        topPanel.add(zoomInBtn);</span>
+<span class="nc" id="L66">        topPanel.add(zoomOutBtn);</span>
+<span class="nc" id="L67">        topPanel.add(saveBtn);</span>
+<span class="nc" id="L68">        topPanel.add(loadBtn);</span>
+
+<span class="nc" id="L70">        frame.add(topPanel, BorderLayout.NORTH);</span>
+<span class="nc" id="L71">        MenuController menuCtrl = new MenuController(model, p1);</span>
+
+<span class="nc" id="L73">        JButton loadImageBtn = new JButton(&quot;Charger image&quot;);</span>
+<span class="nc" id="L74">        topPanel.add(loadImageBtn);</span>
+<span class="nc" id="L75">        loadImageBtn.addActionListener(e -&gt; menuCtrl.loadImage());</span>
+
+        // Pour le undo redo, bien sûr
+<span class="nc" id="L78">        JButton undoBtn = new JButton(undoIcon);</span>
+<span class="nc" id="L79">        JButton redoBtn = new JButton(redoIcon);</span>
+<span class="nc" id="L80">        topPanel.add(undoBtn);</span>
+<span class="nc" id="L81">        topPanel.add(redoBtn);</span>
+
+        // Vue secondaire
+<span class="nc" id="L84">        JPanel rightPanel = new JPanel();</span>
+<span class="nc" id="L85">        JPanel sousPanel = new JPanel();</span>
+<span class="nc" id="L86">        JPanel emptyPanel = new JPanel();</span>
+<span class="nc" id="L87">        emptyPanel.setBackground(Color.DARK_GRAY);</span>
+<span class="nc" id="L88">        rightPanel.setLayout(new GridLayout(2, 1));</span>
+<span class="nc" id="L89">        sousPanel.setLayout(new GridLayout(2,1));</span>
+
+<span class="nc" id="L91">        rightPanel.add(sec);</span>
+<span class="nc" id="L92">        rightPanel.add(sousPanel);</span>
+<span class="nc" id="L93">        sousPanel.add(emptyPanel);</span>
+<span class="nc" id="L94">        sousPanel.add(thumb, BorderLayout.SOUTH);</span>
+
+<span class="nc" id="L96">        frame.add(rightPanel, BorderLayout.EAST);</span>
+
+
+        // Comme en prog 2, on veut des listener pour savoir quand les boutons font de quoi :)
+<span class="nc" id="L100">        zoomInBtn.addActionListener(e -&gt; menuCtrl.zoomIn());</span>
+<span class="nc" id="L101">        zoomOutBtn.addActionListener(e -&gt; menuCtrl.zoomOut());</span>
+
+<span class="nc" id="L103">        saveBtn.addActionListener(e -&gt; menuCtrl.saveAction());</span>
+<span class="nc" id="L104">        loadBtn.addActionListener(e -&gt; menuCtrl.loadAction());</span>
+
+<span class="nc" id="L106">        undoBtn.addActionListener(e -&gt; menuCtrl.undo());</span>
+<span class="nc" id="L107">        redoBtn.addActionListener(e -&gt; menuCtrl.redo());</span>
+
+
+
+        // Le contrôleur qui gère la souris pour le zoom
+<span class="nc" id="L112">        frame.addMouseWheelListener(new MouseController(model, p1));</span>
+
+        // Encore le contrôleur de la souris, mais cette fois pour le drag (merci william)
+<span class="nc" id="L115">        ImageDragController drag = new ImageDragController(model, p1);</span>
+<span class="nc" id="L116">        main.addMouseListener(drag);</span>
+<span class="nc" id="L117">        main.addMouseMotionListener(drag);</span>
+
+
+        // On les ajoute à la fenêtre (je commence avec une seule vue, William tu peux Williamer là-dessus si tu veux)
+<span class="nc" id="L121">        frame.add(main);</span>
+<span class="nc" id="L122">        frame.setVisible(true);</span>
+<span class="nc" id="L123">    }</span>
+
+    // Méthode pour charger une icône
+    private static ImageIcon loadIcon(String path, int size) {
+        try {
+<span class="nc" id="L128">            Image img = ImageIO.read(new File(path));</span>
+<span class="nc" id="L129">            Image scaled = img.getScaledInstance(size, size, Image.SCALE_SMOOTH);</span>
+<span class="nc" id="L130">            return new ImageIcon(scaled);</span>
+<span class="nc" id="L131">        } catch (IOException e) {</span>
+<span class="nc" id="L132">            System.err.println(&quot;Could not load icon: &quot; + path);</span>
+<span class="nc" id="L133">            return null;</span>
+        }
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

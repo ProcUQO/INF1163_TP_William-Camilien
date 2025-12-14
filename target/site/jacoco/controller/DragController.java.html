@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DragController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">INF1163_TP_Cami_William</a> &gt; <a href="index.source.html" class="el_package">controller</a> &gt; <span class="el_source">DragController.java</span></div><h1>DragController.java</h1><pre class="source lang-java linenums">package controller;
+
+import java.awt.event.*;
+import java.awt.Point;
+
+import model.ImageModel;
+import model.Perspective;
+
+/**********
+ * Cette class nous permet d'obtenir les valeur de la position avec le release du click
+ *
+ ***********/
+
+public class DragController extends Controller implements MouseListener {
+
+    private Perspective perspective;
+<span class="nc" id="L17">    public static Point previousPoint = new Point(0,0);</span>
+    private Point pastPoint;
+    // Constructeur de la class
+    public DragController(ImageModel model, Perspective p){
+<span class="nc" id="L21">        super(model);</span>
+<span class="nc" id="L22">        this.perspective = p;</span>
+<span class="nc" id="L23">    }</span>
+
+    @Override
+<span class="nc" id="L26">    public void mousePressed(MouseEvent e) {}</span>
+
+    //Permet au release du click de la souris d'initier la position de la souris initial
+    public void mouseReleased(MouseEvent e) {
+
+<span class="nc" id="L31">        this.pastPoint = new Point(perspective.getTranslationX(), perspective.getTranslationY());</span>
+<span class="nc" id="L32">    }</span>
+
+<span class="nc" id="L34">    public void mouseEntered(MouseEvent e){}</span>
+<span class="nc" id="L35">    public void mouseExited(MouseEvent e){}</span>
+<span class="nc" id="L36">    public void mouseClicked(MouseEvent e){}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

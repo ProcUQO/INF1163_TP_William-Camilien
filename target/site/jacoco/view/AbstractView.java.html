@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AbstractView.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">INF1163_TP_Cami_William</a> &gt; <a href="index.source.html" class="el_package">view</a> &gt; <span class="el_source">AbstractView.java</span></div><h1>AbstractView.java</h1><pre class="source lang-java linenums">package view;
+/*
+Sert de base pour toutes les vues, implémente l'interface Observer pour les changements du modèl
+ */
+import model.ImageModel;
+import model.Perspective;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+
+public abstract class AbstractView extends JPanel implements Observer {
+
+    protected ImageModel model; // Le modèele observé
+    protected Perspective perspective;    // La perspective affiché
+
+    //  model = modèle à observer, p = perspective à afficher
+<span class="nc" id="L18">    public AbstractView(ImageModel model, Perspective p) {</span>
+<span class="nc" id="L19">        this.model = model;</span>
+<span class="nc" id="L20">        this.perspective = p;</span>
+<span class="nc" id="L21">        p.addObserver(this); // On s'abonne aux notifs de la perspective</span>
+
+<span class="nc" id="L23">        setBackground(Color.BLACK); // J'ai pris un background noir, mais ça peut être n'import quoi</span>
+<span class="nc" id="L24">    }</span>
+    // On met à jour la vue qui est appelée par le modèle
+    @Override
+    public void update() {
+<span class="nc" id="L28">        repaint(); // Redessine la vue</span>
+<span class="nc" id="L29">    }</span>
+
+    // On dessine l'image selon notre perspective actuelle. g est le contexte graphique
+    @Override
+    protected void paintComponent(Graphics g) {
+<span class="nc" id="L34">        super.paintComponent(g);</span>
+
+<span class="nc" id="L36">        BufferedImage img = model.getImage();</span>
+<span class="nc bnc" id="L37" title="All 2 branches missed.">        if (img == null) return;</span>
+
+<span class="nc" id="L39">        Graphics2D g2 = (Graphics2D) g;</span>
+
+<span class="nc" id="L41">        double scale = perspective.getScale();</span>
+<span class="nc" id="L42">        int tx = perspective.getTranslationX();</span>
+<span class="nc" id="L43">        int ty = perspective.getTranslationY();</span>
+
+        // 1. Appliquer la translation
+<span class="nc" id="L46">        g2.translate(tx, ty);</span>
+
+        // 2. Appliquer le zoom autour du coin supérieur gauche (oui, on peut changer ça plus tard)
+<span class="nc" id="L49">        g2.scale(scale, scale);</span>
+
+        // 3. Dessiner l’image (voir la doc)
+<span class="nc" id="L52">        g2.drawImage(img, 0, 0, this);</span>
+<span class="nc" id="L53">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

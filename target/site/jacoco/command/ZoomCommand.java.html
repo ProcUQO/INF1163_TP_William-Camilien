@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ZoomCommand.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">INF1163_TP_Cami_William</a> &gt; <a href="index.source.html" class="el_package">command</a> &gt; <span class="el_source">ZoomCommand.java</span></div><h1>ZoomCommand.java</h1><pre class="source lang-java linenums">package command;
+/*
+Patron Command. On encapsule une commande zoom in ou out sur la perspective.
+Comme pour TranslateCommand, on stocke l'état pour si on veut undo.
+ */
+import model.Perspective;
+import model.PerspectiveMemento;
+
+public class ZoomCommand implements Command {
+
+    private Perspective perspective; // La perspective qu'on modifie
+    private PerspectiveMemento before; // Son état avant la modif pour le undo
+    private int direction; // -1, c'est un zoom in, 1 c'est un zoom out.
+
+    // p = perspective et zoomDirection = direction du zoom, qui est un -1 ou 1.
+<span class="fc" id="L16">    public ZoomCommand(Perspective p, int zoomDirection) {</span>
+<span class="fc" id="L17">        this.perspective = p;</span>
+<span class="fc" id="L18">        this.direction = zoomDirection;</span>
+<span class="fc" id="L19">    }</span>
+
+    /*
+    On fait le zoom (mais on sauvegarde premièrement l'état avant de l'appliquer)
+     */
+    @Override
+    public void execute() {
+<span class="fc" id="L26">        before = perspective.createMemento();</span>
+<span class="fc" id="L27">        double scale = perspective.getScale();</span>
+<span class="fc bfc" id="L28" title="All 2 branches covered.">        scale += (direction &lt; 0 ? 0.1 : -0.1);</span>
+<span class="fc" id="L29">        perspective.setScale(Math.max(0.1, scale));</span>
+<span class="fc" id="L30">    }</span>
+
+    // Pour annuler, on restaure l'ancien état.
+    @Override
+    public void undo() {
+<span class="fc" id="L35">        perspective.restoreFromMemento(before);</span>
+<span class="fc" id="L36">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

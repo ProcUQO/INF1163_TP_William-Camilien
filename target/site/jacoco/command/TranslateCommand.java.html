@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TranslateCommand.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">INF1163_TP_Cami_William</a> &gt; <a href="index.source.html" class="el_package">command</a> &gt; <span class="el_source">TranslateCommand.java</span></div><h1>TranslateCommand.java</h1><pre class="source lang-java linenums">package command;
+/*
+Encore le Patron Command. On encapsule une commande de déplacement, la translation pour la perspective.
+Dans le fond, on stocke un état avant de le modifier pour pouvoir faire undo plus tard.
+ */
+import model.Perspective;
+import model.PerspectiveMemento;
+
+public class TranslateCommand implements Command {
+
+    private Perspective perspective; // C'est la perspective qu'on modifie
+    private PerspectiveMemento before; // Son état avant la modification pour le undo
+
+    private int dx, dy; // Les déplacements x/y
+
+
+    // p pour perspective à modifier, dx pour déplacement x et y pour, bah, déplacement y.
+<span class="fc" id="L18">    public TranslateCommand(Perspective p, int dx, int dy) {</span>
+<span class="fc" id="L19">        this.perspective = p;</span>
+<span class="fc" id="L20">        this.dx = dx;</span>
+<span class="fc" id="L21">        this.dy = dy;</span>
+<span class="fc" id="L22">    }</span>
+
+    // On sauvegarde l'état actuel et ENSUITE on applique le déplacement.
+    @Override
+    public void execute() {
+<span class="fc" id="L27">        before = perspective.createMemento(); // notre pattern memento pour sauvegarder l'état avant de le modifier</span>
+        // j'ajoute dx/dy à la translation qui existe (c'est fou qu'on s'est creusé autant la tête pour ça)
+<span class="fc" id="L29">        int newX = perspective.getTranslationX() + dx;</span>
+<span class="fc" id="L30">        int newY = perspective.getTranslationY() + dy;</span>
+        // Faut pas oublier de l'appliquer
+<span class="fc" id="L32">        perspective.setTranslation(newX, newY);</span>
+<span class="fc" id="L33">    }</span>
+
+
+    // On reprend l'ancien état.
+    @Override
+    public void undo() {
+<span class="fc" id="L39">        perspective.restoreFromMemento(before);</span>
+<span class="fc" id="L40">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

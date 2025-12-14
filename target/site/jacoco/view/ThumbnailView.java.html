@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ThumbnailView.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">INF1163_TP_Cami_William</a> &gt; <a href="index.source.html" class="el_package">view</a> &gt; <span class="el_source">ThumbnailView.java</span></div><h1>ThumbnailView.java</h1><pre class="source lang-java linenums">package view;
+/*
+C'est la vue miniature ou thumbnail.
+ */
+import model.ImageModel;
+import model.Perspective;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+
+public class ThumbnailView extends JPanel implements Observer {
+
+    private final ImageModel model;
+    private final Perspective mainPerspective;
+    private final MainView mainview;
+
+<span class="nc" id="L18">    public ThumbnailView(ImageModel model, Perspective p, MainView mainview) {</span>
+<span class="nc" id="L19">        this.model = model;</span>
+<span class="nc" id="L20">        this.mainPerspective = p;</span>
+<span class="nc" id="L21">        this.mainview = mainview;</span>
+<span class="nc" id="L22">        p.addObserver(this);</span>
+<span class="nc" id="L23">        setPreferredSize(new Dimension(50, 50));</span>
+<span class="nc" id="L24">        setBackground(Color.lightGray);</span>
+<span class="nc" id="L25">    }</span>
+
+    @Override
+    public void update() {
+<span class="nc" id="L29">        repaint();</span>
+<span class="nc" id="L30">    }</span>
+
+    @Override
+    protected void paintComponent(Graphics g) {
+<span class="nc" id="L34">        super.paintComponent(g);</span>
+<span class="nc" id="L35">        BufferedImage img = model.getImage();</span>
+<span class="nc bnc" id="L36" title="All 2 branches missed.">        if(img == null) return;</span>
+
+<span class="nc" id="L38">        Graphics g2 = (Graphics) g;</span>
+<span class="nc" id="L39">        int width = getWidth();</span>
+<span class="nc" id="L40">        int height = getHeight();</span>
+<span class="nc" id="L41">        int imgWidth = img.getWidth();</span>
+<span class="nc" id="L42">        int imgHeight = img.getHeight();</span>
+
+<span class="nc" id="L44">        double scaleMiniImg = Math.min((double) width / imgWidth, (double) height / imgHeight);</span>
+<span class="nc" id="L45">        int scaleWidth = (int) ((imgWidth * scaleMiniImg)/2);</span>
+<span class="nc" id="L46">        int scaleHeight = (int) ((imgHeight * scaleMiniImg)/2);</span>
+
+<span class="nc" id="L48">        int offsetX = (width - scaleWidth) / 2;</span>
+<span class="nc" id="L49">        int offsetY = (height - scaleHeight) / 2;</span>
+
+<span class="nc" id="L51">        g2.drawImage(img, offsetX, offsetY, scaleWidth, scaleHeight, this);</span>
+<span class="nc" id="L52">        g2.setColor(Color.darkGray);</span>
+<span class="nc" id="L53">        g2.drawRect(0, 0, width, height);</span>
+<span class="nc" id="L54">    }</span>
+
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

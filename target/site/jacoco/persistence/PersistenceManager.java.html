@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PersistenceManager.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">INF1163_TP_Cami_William</a> &gt; <a href="index.source.html" class="el_package">persistence</a> &gt; <span class="el_source">PersistenceManager.java</span></div><h1>PersistenceManager.java</h1><pre class="source lang-java linenums">package persistence;
+/*
+Gèere la sauvegarde et le chargement des perspectives avec le format JSON (voir document
+On ne veut pasp erdre l'état d'une perspective.
+ */
+import model.Perspective;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+<span class="nc" id="L12">public class PersistenceManager {</span>
+    /*
+    On sauvegarde l'état de la perspective (p pour perspective, filename pour le nom, IOException en cas d'erreur)
+     */
+    public static void save(Perspective p, String filename) throws IOException {
+        // Vu que c'est un peu gossant d'écrire .json quand on veut un .json, cette ligne va rendre le truc automatique si c'est pas déjà fait
+<span class="pc bpc" id="L18" title="1 of 2 branches missed.">        if (!filename.toLowerCase().endsWith(&quot;.json&quot;)) {</span>
+<span class="nc" id="L19">            filename += &quot;.json&quot;;</span>
+        }
+
+        // Version JSON de la perspective qu'on crée et sauvegarde
+<span class="fc" id="L23">        String json = &quot;{\n&quot; +</span>
+<span class="fc" id="L24">                &quot;  \&quot;scale\&quot;: &quot; + p.getScale() + &quot;,\n&quot; +</span>
+<span class="fc" id="L25">                &quot;  \&quot;x\&quot;: &quot; + p.getTranslationX() + &quot;,\n&quot; +</span>
+<span class="fc" id="L26">                &quot;  \&quot;y\&quot;: &quot; + p.getTranslationY() + &quot;\n&quot; +</span>
+                &quot;}&quot;;
+<span class="fc" id="L28">        Files.write(Paths.get(filename), json.getBytes());</span>
+<span class="fc" id="L29">    }</span>
+    /*
+    On charge l'état du fichier JSON.
+     */
+    public static void load(Perspective p, String filename) throws IOException {
+        // On lit le contenu et on extrait les valeurs
+<span class="fc" id="L35">        String content = new String(Files.readAllBytes(Paths.get(filename)));</span>
+
+<span class="fc" id="L37">        double scale = extractDouble(content, &quot;scale&quot;);</span>
+<span class="fc" id="L38">        int x = (int) extractDouble(content, &quot;x&quot;);</span>
+<span class="fc" id="L39">        int y = (int) extractDouble(content, &quot;y&quot;);</span>
+
+<span class="fc" id="L41">        p.setScale(scale);</span>
+<span class="fc" id="L42">        p.setTranslation(x, y);</span>
+<span class="fc" id="L43">    }</span>
+    // Ce que j'appelle dans le load. C'est pour extraire les valeurs numériques du fichier. Expérimental.
+    private static double extractDouble(String json, String key) {
+<span class="fc" id="L46">        int index = json.indexOf(key);</span>
+<span class="pc bpc" id="L47" title="1 of 2 branches missed.">        if (index == -1) return 0;</span>
+
+<span class="fc" id="L49">        int colon = json.indexOf(&quot;:&quot;, index);</span>
+<span class="fc" id="L50">        int comma = json.indexOf(&quot;,&quot;, colon);</span>
+<span class="fc bfc" id="L51" title="All 2 branches covered.">        if (comma == -1) comma = json.indexOf(&quot;}&quot;, colon); // On regarde la fin del 'bojet JSON, si y'a pas de virgule.</span>
+        // Parce qu'il faut un double
+<span class="fc" id="L53">        return Double.parseDouble(json.substring(colon + 1, comma).trim());</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

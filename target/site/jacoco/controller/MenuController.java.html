@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MenuController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">INF1163_TP_Cami_William</a> &gt; <a href="index.source.html" class="el_package">controller</a> &gt; <span class="el_source">MenuController.java</span></div><h1>MenuController.java</h1><pre class="source lang-java linenums">package controller;
+/*
+ESSENTIEL, représente les commandes par menu (et non par la souris)
+ */
+import command.LoadImageCommand;
+import command.LoadPerspectiveCommand;
+import command.SavePerspectiveCommand;
+import command.ZoomCommand;
+import history.HistoryManager;
+import model.ImageModel;
+import model.Perspective;
+
+import javax.swing.*;
+import java.io.File;
+import javax.swing.filechooser.FileNameExtensionFilter; // pour filtrer les résultats du file explorer de java qui est un peu dégueue sinon
+
+public class MenuController extends Controller {
+
+    private Perspective perspective;
+
+    public MenuController(ImageModel model, Perspective p) {
+<span class="fc" id="L22">        super(model);</span>
+<span class="fc" id="L23">        this.perspective = p;</span>
+<span class="fc" id="L24">    }</span>
+
+    // Bouton : Sauvegarder
+    public void saveAction() {
+<span class="nc" id="L28">        JFileChooser chooser = new JFileChooser();</span>
+<span class="nc" id="L29">        chooser.setDialogTitle(&quot;Enregistrer la perspective&quot;);</span>
+<span class="nc" id="L30">        int result = chooser.showSaveDialog(null);</span>
+
+<span class="nc bnc" id="L32" title="All 2 branches missed.">        if (result == JFileChooser.APPROVE_OPTION) {</span>
+<span class="nc" id="L33">            File file = chooser.getSelectedFile();</span>
+<span class="nc" id="L34">            new SavePerspectiveCommand(perspective, file.getAbsolutePath()).execute();</span>
+        }
+<span class="nc" id="L36">    }</span>
+
+    // Bouton : Charger
+    public void loadAction() {
+
+<span class="nc" id="L41">        JFileChooser chooser = new JFileChooser();</span>
+<span class="nc" id="L42">        chooser.setDialogTitle(&quot;Charger une perspective&quot;);</span>
+
+        // J'ai ajouté ceci pour qu'on aille juste les fichiers json dans le file explorer de java, sinon c'était un peu nul
+<span class="nc" id="L45">        FileNameExtensionFilter filter = new FileNameExtensionFilter(&quot;Fichiers JSON&quot;, &quot;json&quot;);</span>
+<span class="nc" id="L46">        chooser.setFileFilter(filter);</span>
+<span class="nc" id="L47">        chooser.setAcceptAllFileFilterUsed(false);</span>
+
+<span class="nc" id="L49">        int result = chooser.showOpenDialog(null);</span>
+
+<span class="nc bnc" id="L51" title="All 2 branches missed.">        if (result == JFileChooser.APPROVE_OPTION) {</span>
+<span class="nc" id="L52">            String path = chooser.getSelectedFile().getAbsolutePath();</span>
+<span class="nc" id="L53">            new LoadPerspectiveCommand(perspective, path).execute();</span>
+        }
+<span class="nc" id="L55">    }</span>
+
+
+    public void zoomIn() {
+        // direction -1 dans ton code = zoom in
+<span class="fc" id="L60">        new ZoomCommand(perspective, -1).execute();</span>
+<span class="fc" id="L61">    }</span>
+
+    public void zoomOut() {
+        // direction 1 dans ton code = zoom out
+<span class="nc" id="L65">        new ZoomCommand(perspective, 1).execute();</span>
+<span class="nc" id="L66">    }</span>
+
+    // C'est le bouton pour loader une image qu'on va charger depuis notre app (comme le reste en fait)
+    public void loadImage() {
+
+<span class="nc" id="L71">        JFileChooser chooser = new JFileChooser();</span>
+<span class="nc" id="L72">        chooser.setDialogTitle(&quot;Choisir une image&quot;);</span>
+
+        // Beau filtre pour seulement avoir les images
+<span class="nc" id="L75">        FileNameExtensionFilter filter =</span>
+                new FileNameExtensionFilter(
+                        &quot;Images (png, jpg, jpeg, gif)&quot;,
+                        &quot;png&quot;, &quot;jpg&quot;, &quot;jpeg&quot;, &quot;gif&quot;
+                );
+<span class="nc" id="L80">        chooser.setFileFilter(filter);</span>
+
+        // On cache les fichiers non filtrés :
+<span class="nc" id="L83">        chooser.setAcceptAllFileFilterUsed(false);</span>
+
+<span class="nc" id="L85">        int result = chooser.showOpenDialog(null);</span>
+
+<span class="nc bnc" id="L87" title="All 2 branches missed.">        if (result == JFileChooser.APPROVE_OPTION) {</span>
+<span class="nc" id="L88">            String path = chooser.getSelectedFile().getAbsolutePath();</span>
+<span class="nc" id="L89">            new LoadImageCommand(model, path).execute();</span>
+        }
+<span class="nc" id="L91">    }</span>
+
+    public void undo() {
+<span class="nc" id="L94">        HistoryManager.getInstance().undo();</span>
+<span class="nc" id="L95">    }</span>
+
+    public void redo() {
+<span class="nc" id="L98">        HistoryManager.getInstance().redo();</span>
+<span class="nc" id="L99">    }</span>
+
+
+}
+
+    /* Zoom avant.
+    public void zoomIn() {
+        executeCommand(new ZoomCommand(perspective, -1));
+    }
+
+    // Arrière.
+    public void zoomOut() {
+        executeCommand(new ZoomCommand(perspective, 1));
+    }
+    */
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>
