@@ -1,14 +1,14 @@
-package main.controller;
+package controller;
 /*
 ESSENTIEL, représente les commandes par menu (et non par la souris)
  */
-import main.command.LoadImageCommand;
-import main.command.LoadPerspectiveCommand;
-import main.command.SavePerspectiveCommand;
-import main.command.ZoomCommand;
-import main.history.HistoryManager;
-import main.model.ImageModel;
-import main.model.Perspective;
+import command.LoadImageCommand;
+import command.LoadPerspectiveCommand;
+import command.SavePerspectiveCommand;
+import command.ZoomCommand;
+import history.HistoryManager;
+import model.ImageModel;
+import model.Perspective;
 
 import javax.swing.*;
 import java.io.File;

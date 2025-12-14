@@ -1,7 +1,7 @@
-package main.view;
+package view;
 
-import main.model.ImageModel;
-import main.model.Perspective;
+import model.ImageModel;
+import model.Perspective;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;

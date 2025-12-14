@@ -1,9 +1,9 @@
-package main.view;
+package view;
 /*
 Sert de base pour toutes les vues, implémente l'interface Observer pour les changements du modèl
  */
-import main.model.ImageModel;
-import main.model.Perspective;
+import model.ImageModel;
+import model.Perspective;
 
 import javax.swing.*;
 import java.awt.*;

@@ -1,7 +1,7 @@
-package test.java.unit.model;
+package unit.model;
 
-import main.model.Perspective;
-import main.model.PerspectiveMemento;
+import model.Perspective;
+import model.PerspectiveMemento;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 

@@ -1,4 +1,4 @@
-package main.model;
+package model;
 /*
 C'est un état sauvegardé de la perspective.
 Il ne peut pas être modifié une fois créé (c'est immuable, c'est une bonne chose!!!)

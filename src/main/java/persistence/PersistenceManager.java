@@ -1,9 +1,9 @@
-package main.persistence;
+package persistence;
 /*
 Gèere la sauvegarde et le chargement des perspectives avec le format JSON (voir document
 On ne veut pasp erdre l'état d'une perspective.
  */
-import main.model.Perspective;
+import model.Perspective;
 
 import java.io.IOException;
 import java.nio.file.Files;

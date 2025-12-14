@@ -1,12 +1,12 @@
-package main.command;
+package command;
 
 /*
 Commande qui sauvegarde l'état d'une perspective dans un fichier JSON.
 Cette commande N'AFFECTE PAS le modèle → elle n'entre pas dans l'historique Undo/Redo.
  */
 
-import main.model.Perspective;
-import main.persistence.PersistenceManager;
+import model.Perspective;
+import persistence.PersistenceManager;
 
 public class SavePerspectiveCommand implements Command {
 

@@ -1,4 +1,4 @@
-package main.command;
+package command;
 /* On encapsule une action comme un objet pour simplifier la gestion des opérations
 comme l'exécution, l'annulation, l'historique. C'est le patron Command.
  */

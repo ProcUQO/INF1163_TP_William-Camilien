@@ -1,7 +1,7 @@
-package test.java.unit.history;
+package unit.history;
 
-import main.command.ZoomCommand;
-import main.model.Perspective;
+import command.ZoomCommand;
+import model.Perspective;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 

@@ -1,6 +1,6 @@
-package main.command;
+package command;
 
-import main.model.ImageModel;
+import model.ImageModel;
 
 public class LoadImageCommand implements Command {
 

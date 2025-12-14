@@ -1,9 +1,9 @@
-package test.java.unit.history;
+package unit.history;
 
-import main.history.HistoryManager;
-import test.java.unit.command.FakeCommand;
+import history.HistoryManager;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import unit.command.FakeCommand;
 
 import static org.junit.jupiter.api.Assertions.*;
 

@@ -1,8 +1,8 @@
-package test.java.integration;
-import main.command.ZoomCommand;
-import main.controller.MenuController;
-import main.model.ImageModel;
-import main.model.Perspective;
+package integration;
+import command.ZoomCommand;
+import controller.MenuController;
+import model.ImageModel;
+import model.Perspective;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -13,7 +13,7 @@ class ControllerIntegrationTest {
     @Test
     void menuZoomAndDirectCommandProduceSameEffect() {
         Perspective p1 = new Perspective();
-        ImageModel model = new ImageModel(null);
+        ImageModel model = new ImageModel("src/main/java/image.png");
 
         MenuController menu = new MenuController(model, p1);
 

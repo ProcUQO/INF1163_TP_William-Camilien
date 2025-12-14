@@ -1,6 +1,6 @@
-package main.history;
+package history;
 
-import main.command.Command;
+import command.Command;
 import java.util.Stack;
 
 /**

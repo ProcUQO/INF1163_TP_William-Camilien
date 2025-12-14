@@ -1,9 +1,9 @@
-package main.model;
+package model;
 /*
 C'est une perspective d'affichage de l'image (donc l'image avec son zoom ou translation).
 Utilise d'ailleurs Memento pour sauvegarder et restaurer son état.
  */
-import main.view.Observer;
+import view.Observer;
 import java.util.ArrayList;
 import java.util.List;
 

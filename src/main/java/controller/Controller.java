@@ -1,12 +1,12 @@
-package main.controller;
+package controller;
 /*
 C'estn otre fameux abstract Controller (MVC et GRASP).
 C'est donc la base pour nos contrôleurs, le blueprint qui va gérer l'exécution
 d'une commande sur le modèle.
  */
-import main.history.HistoryManager;
-import main.model.ImageModel;
-import main.command.Command;
+import history.HistoryManager;
+import model.ImageModel;
+import command.Command;
 
 public abstract class Controller {
 

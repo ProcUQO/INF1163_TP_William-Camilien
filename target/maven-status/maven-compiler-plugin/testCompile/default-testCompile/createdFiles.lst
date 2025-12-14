@@ -1,0 +1,12 @@
+unit\strategy\CopyStrategyTest.class
+e2e\RestartLoadTest.class
+e2e\UndoAffectsOnlyActiveViewTest.class
+unit\persistance\PersistenceTest.class
+integration\CopyIntegrationTest.class
+unit\command\TranslateCommandTest.class
+integration\ControllerIntegrationTest.class
+unit\history\HistoryManagerTest.class
+unit\model\PerspectiveTest.class
+integration\PersistenceIntegrationTest.class
+unit\command\FakeCommand.class
+unit\history\ZoomCommandTest.class

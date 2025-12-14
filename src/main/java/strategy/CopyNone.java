@@ -1,6 +1,6 @@
-package main.strategy;
+package strategy;
 
-import main.model.Perspective;
+import model.Perspective;
 
 public class CopyNone implements CopyStrategy {
     @Override

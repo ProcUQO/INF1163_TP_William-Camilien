@@ -1,10 +1,10 @@
-package main.command;
+package command;
 /*
 Encore le Patron Command. On encapsule une commande de déplacement, la translation pour la perspective.
 Dans le fond, on stocke un état avant de le modifier pour pouvoir faire undo plus tard.
  */
-import main.model.Perspective;
-import main.model.PerspectiveMemento;
+import model.Perspective;
+import model.PerspectiveMemento;
 
 public class TranslateCommand implements Command {
 

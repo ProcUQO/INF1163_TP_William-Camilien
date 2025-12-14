@@ -1,8 +1,8 @@
-package test.java.unit.persistance;
+package unit.persistance;
 
-import main.command.SavePerspectiveCommand;
-import main.command.LoadPerspectiveCommand;
-import main.model.Perspective;
+import command.SavePerspectiveCommand;
+import command.LoadPerspectiveCommand;
+import model.Perspective;
 import org.junit.jupiter.api.Test;
 import java.io.File;
 import static org.junit.jupiter.api.Assertions.*;

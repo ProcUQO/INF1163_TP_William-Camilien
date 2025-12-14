@@ -1,6 +1,6 @@
-package test.java.unit.command;
+package unit.command;
 
-import main.command.Command;
+import command.Command;
 
 public class FakeCommand implements Command {
 

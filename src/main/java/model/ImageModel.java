@@ -1,4 +1,4 @@
-package main.model;
+package model;
 /*
 Modèle de l'image, gère les perspecives associées. Notifie avec les observateurs s'il y a changement.
  */

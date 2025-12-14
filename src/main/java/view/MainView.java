@@ -1,9 +1,9 @@
-package main.view;
+package view;
 /*
 C'est la vue principale de l'application qui affiche l'image.
  */
-import main.model.ImageModel;
-import main.model.Perspective;
+import model.ImageModel;
+import model.Perspective;
 
 public class MainView extends AbstractView {
 

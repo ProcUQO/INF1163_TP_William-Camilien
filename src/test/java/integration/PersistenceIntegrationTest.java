@@ -1,12 +1,12 @@
-package test.java.integration;
-import main.command.LoadPerspectiveCommand;
-import main.command.SavePerspectiveCommand;
-import main.model.Perspective;
+package integration;
+import command.LoadPerspectiveCommand;
+import command.SavePerspectiveCommand;
+import model.Perspective;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 // Comme PersistenceTest mais avec des path absolu (peut être pas nécessaire j'avoue, mais ça ne fait pas mal d'essayer)
 // basé du devis (Save -> Load restaure exactement l’état)

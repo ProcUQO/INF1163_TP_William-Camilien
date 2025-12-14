@@ -1,6 +1,6 @@
-package main.strategy;
+package strategy;
 
-import main.model.Perspective;
+import model.Perspective;
 // On copie de la source vers la cible (voir Copy Strategy)
 public class CopyTranslation implements CopyStrategy {
     @Override

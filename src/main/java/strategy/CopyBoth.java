@@ -1,6 +1,6 @@
-package main.strategy;
+package strategy;
 // Copie pour l'échelle ET la translation
-import main.model.Perspective;
+import model.Perspective;
 
 // On copie de la source vers la cible (voir Copy Strategy)
 public class CopyBoth implements CopyStrategy {

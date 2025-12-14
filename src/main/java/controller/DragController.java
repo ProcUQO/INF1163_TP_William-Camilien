@@ -1,10 +1,10 @@
-package main.controller;
+package controller;
 
 import java.awt.event.*;
 import java.awt.Point;
 
-import main.model.ImageModel;
-import main.model.Perspective;
+import model.ImageModel;
+import model.Perspective;
 
 /**********
  * Cette class nous permet d'obtenir les valeur de la position avec le release du click

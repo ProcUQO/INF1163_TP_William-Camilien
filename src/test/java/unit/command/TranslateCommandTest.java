@@ -1,7 +1,7 @@
-package test.java.unit.command;
+package unit.command;
 
-import main.command.TranslateCommand;
-import main.model.Perspective;
+import command.TranslateCommand;
+import model.Perspective;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 

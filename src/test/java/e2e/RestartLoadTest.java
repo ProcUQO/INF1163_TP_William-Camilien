@@ -1,13 +1,13 @@
-package test.java.e2e;
+package e2e;
 
-import main.command.LoadPerspectiveCommand;
-import main.command.SavePerspectiveCommand;
-import main.model.Perspective;
+import command.LoadPerspectiveCommand;
+import command.SavePerspectiveCommand;
+import model.Perspective;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 // Fait avec l'aide de l'IA. Pour simuler un redémarrage, voir si la perspective est correcte après
 public class RestartLoadTest {

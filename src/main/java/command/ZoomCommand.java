@@ -1,10 +1,10 @@
-package main.command;
+package command;
 /*
 Patron Command. On encapsule une commande zoom in ou out sur la perspective.
 Comme pour TranslateCommand, on stocke l'état pour si on veut undo.
  */
-import main.model.Perspective;
-import main.model.PerspectiveMemento;
+import model.Perspective;
+import model.PerspectiveMemento;
 
 public class ZoomCommand implements Command {
 

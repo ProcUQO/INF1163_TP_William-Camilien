@@ -1,2 +1,8 @@
-Si tu vois ceci, c'est que ça marche! :)
-Le main est le App.java
+## Exécution de l'application
+
+L'application peut être lancée :
+- depuis IntelliJ (classe `App`).
+- ou via Maven :
+  mvn test
+
+  Il est possible qu'IntelliJ demande la permission d'utiliser Maven.

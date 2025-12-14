@@ -1,10 +1,10 @@
-package main.controller;
+package controller;
 /*
 Actions de la souris, comme la molette pour zoomer.
  */
-import main.model.ImageModel;
-import main.command.ZoomCommand;
-import main.model.Perspective;
+import model.ImageModel;
+import command.ZoomCommand;
+import model.Perspective;
 
 import java.awt.event.*;
 

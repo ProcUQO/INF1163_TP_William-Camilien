@@ -1,13 +1,13 @@
-package main.command;
+package command;
 
 /*
 Charge l'état d'une perspective à partir d'un fichier JSON (voir HistoryManager.java).
 Contrairement à save, on peut undo un load!
  */
 
-import main.model.Perspective;
-import main.model.PerspectiveMemento;
-import main.persistence.PersistenceManager;
+import model.Perspective;
+import model.PerspectiveMemento;
+import persistence.PersistenceManager;
 
 public class LoadPerspectiveCommand implements Command {
 

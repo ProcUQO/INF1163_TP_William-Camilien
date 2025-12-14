@@ -1,9 +1,9 @@
-package main.controller;
+package controller;
 
-import main.command.TranslateCommand;
-import main.model.ImageModel;
-import main.model.Perspective;
-import main.model.PerspectiveMemento;
+import command.TranslateCommand;
+import model.ImageModel;
+import model.Perspective;
+import model.PerspectiveMemento;
 import java.awt.Point;
 import java.awt.event.*;
 

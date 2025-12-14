@@ -1,11 +1,11 @@
-package test.java.unit.strategy;
+package unit.strategy;
 
-import main.model.Perspective;
+import model.Perspective;
 import org.junit.jupiter.api.Test;
-import main.strategy.CopyBoth;
-import main.strategy.CopyNone;
-import main.strategy.CopyScale;
-import main.strategy.CopyTranslation;
+import strategy.CopyBoth;
+import strategy.CopyNone;
+import strategy.CopyScale;
+import strategy.CopyTranslation;
 
 import static org.junit.jupiter.api.Assertions.*;
 

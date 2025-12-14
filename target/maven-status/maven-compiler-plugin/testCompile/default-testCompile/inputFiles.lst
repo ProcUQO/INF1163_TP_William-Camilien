@@ -1,0 +1,12 @@
+D:\Travaux\Uni\testmaven\INF1163_TP_William-Camilien\src\test\java\e2e\RestartLoadTest.java
+D:\Travaux\Uni\testmaven\INF1163_TP_William-Camilien\src\test\java\e2e\UndoAffectsOnlyActiveViewTest.java
+D:\Travaux\Uni\testmaven\INF1163_TP_William-Camilien\src\test\java\integration\ControllerIntegrationTest.java
+D:\Travaux\Uni\testmaven\INF1163_TP_William-Camilien\src\test\java\integration\CopyIntegrationTest.java
+D:\Travaux\Uni\testmaven\INF1163_TP_William-Camilien\src\test\java\integration\PersistenceIntegrationTest.java
+D:\Travaux\Uni\testmaven\INF1163_TP_William-Camilien\src\test\java\unit\command\FakeCommand.java
+D:\Travaux\Uni\testmaven\INF1163_TP_William-Camilien\src\test\java\unit\command\TranslateCommandTest.java
+D:\Travaux\Uni\testmaven\INF1163_TP_William-Camilien\src\test\java\unit\history\HistoryManagerTest.java
+D:\Travaux\Uni\testmaven\INF1163_TP_William-Camilien\src\test\java\unit\history\ZoomCommandTest.java
+D:\Travaux\Uni\testmaven\INF1163_TP_William-Camilien\src\test\java\unit\model\PerspectiveTest.java
+D:\Travaux\Uni\testmaven\INF1163_TP_William-Camilien\src\test\java\unit\persistance\PersistenceTest.java
+D:\Travaux\Uni\testmaven\INF1163_TP_William-Camilien\src\test\java\unit\strategy\CopyStrategyTest.java

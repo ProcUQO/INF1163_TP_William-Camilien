@@ -1,16 +1,14 @@
-package main;
-
-import main.controller.ImageDragController;
-import main.controller.MenuController;
-import main.controller.MouseController;
-import main.model.ImageModel;
-import main.model.Perspective;
-import main.view.MainView;
-import main.view.SecondaryView;
-import main.view.ThumbnailView;
-import main.model.*;
-import main.view.*;
-import main.controller.*;
+import controller.ImageDragController;
+import controller.MenuController;
+import controller.MouseController;
+import model.ImageModel;
+import model.Perspective;
+import view.MainView;
+import view.SecondaryView;
+import view.ThumbnailView;
+import model.*;
+import view.*;
+import controller.*;
 /*
 Un peu notre main!! Il va initialiser notre modèle, ses vues et contrôleurs.
 On peut modifier la taille de la fenêtre, les boutons, etc..
@@ -27,7 +25,7 @@ public class App {
 
         // On initialise le modèele avec une image. Pas grave si elle ne charge pas, on peut en charger manuellement de toute façon.
         // Conseil de Cami : faire ctrl + clic gauche sur ImageModel pour se rediriger aux sections
-        ImageModel model = new ImageModel("main/image.png");
+        ImageModel model = new ImageModel("src/main/java/image.png");
 
         // On crée les trois perspectives
         Perspective p1 = new Perspective();
@@ -51,10 +49,10 @@ public class App {
         frame.add(main, BorderLayout.CENTER);
 
         // Chargement d'icones
-        ImageIcon zoomInIcon = loadIcon("main/icones/zoom-in.png", 20);
-        ImageIcon zoomOutIcon = loadIcon("main/icones/zoom-out.png", 20);
-        ImageIcon undoIcon = loadIcon("main/icones/undo.png", 20);
-        ImageIcon redoIcon = loadIcon("main/icones/redo.png", 20);
+        ImageIcon zoomInIcon = loadIcon("src/main/java/icones/zoom-in.png", 20);
+        ImageIcon zoomOutIcon = loadIcon("src/main/java/icones/zoom-out.png", 20);
+        ImageIcon undoIcon = loadIcon("src/main/java/icones/undo.png", 20);
+        ImageIcon redoIcon = loadIcon("src/main/java/icones/redo.png", 20);
 
         // Le menu et ses boutons
         JPanel topPanel = new JPanel();

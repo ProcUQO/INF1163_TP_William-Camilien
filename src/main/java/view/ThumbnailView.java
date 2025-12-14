@@ -1,9 +1,9 @@
-package main.view;
+package view;
 /*
 C'est la vue miniature ou thumbnail.
  */
-import main.model.ImageModel;
-import main.model.Perspective;
+import model.ImageModel;
+import model.Perspective;
 
 import javax.swing.*;
 import java.awt.*;
